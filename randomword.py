@@ -12,6 +12,7 @@ link = "http://www.mieliestronk.com/corncob_lowercase.txt"
 # Makes a request to the link above and registers it's text as a variable.
 RequestText = requests.get(link).text
 
+
 # Makes a list called WordList for us to use.
 WordList = []
 
@@ -21,13 +22,19 @@ WordList = RequestText.split("\n")
 # Sets the RandomWord variable to a random item in the list WordList.any
 RandomWord = random.choice(WordList)
 
+
+
 # Now that we have our word, it's time to make sure it doesn't contain profanity!
+
+
 
 # Loads default censor words from the profanity package.
 profanity.load_censor_words()
 
 # Censors our random word and places the newly censored word in the RandomWord variable.
 RandomWord = profanity.censor(RandomWord)
+
+
 
 # Prints your new, censored random word!
 print(RandomWord)
